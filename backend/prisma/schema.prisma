@@ -1,0 +1,25 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model type {
+  typeId Int    @id @default(autoincrement())
+  name   String @db.VarChar(30)
+  menu   menu[]
+}
+
+model menu {
+  menuId       Int     @id @default(autoincrement())
+  name         String  @db.VarChar(40)
+  price        Float   @db.Float
+  isBestSeller Boolean
+  typeId       Int
+  type         type    @relation(fields: [typeId], references: [typeId])
+
+  @@index([typeId], map: "typeId")
+}
