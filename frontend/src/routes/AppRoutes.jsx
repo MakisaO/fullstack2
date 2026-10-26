@@ -1,14 +1,13 @@
 import { Routes, Route, Link } from "react-router-dom";
 import MainLayout from "../layouts/MainLayout";
-import HomePage from "../pages/HomePage";
 import Menu from "../pages/menus/Menu";
 
 function AppRoutes() {
   return (
     <Routes>
       <Route element={<MainLayout />}>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/menu" element={<Menu />} />
+        {/* ตั้งให้หน้าแรก (/) โหลดคอมโพเนนต์ Menu ขึ้นมาเลย */}
+        <Route path="/" element={<Menu />} />
       </Route>
       <Route
         path="*"

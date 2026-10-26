@@ -8,11 +8,9 @@ function MainLayout() {
       <nav style={{ width: "220px", background: "#f0f0f0", padding: "20px" }}>
         <h3>Menu</h3>
         <ul style={{ lineHeight: "2" }}>
+          {/* ลบ Home ออก และเปลี่ยน Menu ให้ชี้ไปที่ / */}
           <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/menu">Menu</Link>
+            <Link to="/">Menu</Link>
           </li>
         </ul>
       </nav>
